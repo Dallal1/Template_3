@@ -587,6 +587,291 @@ ul {
 }
 
 /* End Features */
+/* Start Testimonials */
+.Testimonials {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  background-color: var(--section-background);
+}
+
+.Testimonials .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.Testimonials .box {
+  background-color: white;
+  box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
+}
+
+.Testimonials .box img {
+  position: absolute;
+  width: 80px;
+  right: -15px;
+  top: -50px;
+  border-radius: 50%;
+  border: 10px solid #ececec;
+}
+
+.Testimonials .box h3 {
+  margin: 0 0 10px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.Testimonials .box .title {
+  margin: 0 0 10px;
+  display: block;
+  color: #777;
+}
+
+.Testimonials .box .rate .filled {
+  color: #ffc107;
+}
+
+.Testimonials .box p {
+  line-height: 1.5;
+  color: #777;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+/* End Testimonials */
+/* Start Team Members */
+.team {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  position: relative;
+}
+.team .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.team .box {
+  position: relative;
+}
+.team .box::before,
+.team .box::after {
+  content: "";
+  background-color: #f3f3f3;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 10px;
+  transition: var(--main-transition);
+}
+.team .box::before {
+  width: calc(100% - 60px);
+  z-index: -2;
+}
+.team .box::after {
+  z-index: -1;
+  background-color: #e4e4e4;
+  width: 0;
+}
+.team .box:hover::after {
+  width: calc(100% - 60px);
+}
+.team .box .data {
+  display: flex;
+  align-items: center;
+  padding-top: 60px;
+}
+.team .box .data img {
+  width: calc(100% - 60px);
+  transition: var(--main-transition);
+  border-radius: 10px;
+}
+.team .box:hover img {
+  filter: grayscale(100%);
+}
+.team .box .data .social {
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.team .box .data .social a {
+  width: 60px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team .box .data .social a:hover i {
+  color: var(--main-color);
+}
+.team .box .data .social i {
+  color: #777;
+  transition: var(--main-transition);
+}
+.team .box .info {
+  padding-left: 80px;
+}
+.team .box .info h3 {
+  margin-bottom: 0;
+  color: var(--main-color);
+  font-size: 22px;
+  transition: var(--main-transition);
+}
+.team .box .info p {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+.team .box:hover .info h3 {
+  color: #777;
+}
+
+/* End Team Members */
+/* Start Services */
+.services {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  position: relative;
+  background-color: var(--section-background);
+}
+
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.services .box {
+  background-color: white;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  counter-increment: services;
+  transition: var(--main-transition);
+  position: relative;
+}
+
+.services .box:hover {
+  transform: translateY(-10px);
+}
+
+.services .box::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--main-color);
+  height: 3px;
+  width: 0px;
+  transition: var(--main-transition);
+}
+
+.services .box:hover:before {
+  width: 100%;
+}
+
+.services .box > i {
+  display: block;
+  margin: 30px auto 20px;
+  text-align: center;
+  color: #5D5D5D5D;
+}
+
+.services .box > h3 {
+  margin: 30px auto 20px;
+  text-align: center;
+  font-size: 25px;
+  color: var(--main-color);
+}
+
+.services .info {
+  position: relative;
+  text-align: right;
+  padding: 15px;
+  background-color: var(--section-background);
+}
+
+.services .info::before {
+  content: "0" counter(services);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--main-color);
+  height: 100%;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  padding-right: 10px;
+}
+
+.services .info::after {
+  content: "";
+  position: absolute;
+  background-color: #d5d5d5;
+  width: 60px;
+  height: 100%;
+  top: 0.1px;
+  left: 76px;
+  transform: skewX(-30deg);
+}
+
+.services .info > a {
+  color: var(--main-color);
+
+}
+/* End Services */
+/* Start Our Skills */
+.our-skills {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  position: relative;
+}
+
+.our-skills .container {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width:991px) {
+  .our-skills .container img{
+    display: none;
+  }
+}
+.our-skills .skills {
+  flex: 1;
+}
+
+.our-skills .skills .skill h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.our-skills .skills .skill h3 span {
+  font-size: 12px;
+  border: 1px solid #ccc;
+  padding: 3px 5px;
+}
+
+.our-skills .skills .skill .the-progress {
+  position: relative;
+  height: 30px;
+  background-color: #ccc;
+}
+
+.our-skills .skills .skill .the-progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--main-color);
+}
+/* End Our Skills */
 /* Start Animation */
 @keyframes up-and-down {
   0%,
